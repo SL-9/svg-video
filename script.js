@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 --blue: #29b6f6;
             }
             body { 
-                font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+                font-family: 'Inter', sans-serif;
                 display: flex; 
                 flex-direction: column;
                 height: 100vh; 
@@ -219,51 +219,51 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
 
     async function runAnimation() {
-        // 1. Opening (5s)
-        await sleep(5000);
+        // 1. Opening (was 5s, now 7s)
+        await sleep(7000);
 
         // 2. Open Tool (5s)
         openingText.style.opacity = '0';
         browser.style.opacity = '1';
         cursor.style.opacity = '1';
-        showNarration('今回は、SVGをかんたんに最適化できる無料ツールを使ってみましょう。', 4500);
+        showNarration('今回は、SVGをかんたんに最適化できる無料ツールを使ってみましょう。', 5000);
         await moveCursor(100, 23, 500);
         await typeIn(urlEl, 'https://svg.vercel.app/', 80);
         await sleep(500);
         iframe.contentDocument.write(mockAppHTML);
         iframe.contentDocument.close();
-        await sleep(1500);
+        await sleep(2500); // Increased pause
 
         const inputCodeEl = iframe.contentDocument.getElementById('input-code');
         const outputCodeEl = iframe.contentDocument.getElementById('output-code');
         const previewSvgEl = iframe.contentDocument.getElementById('preview-svg');
         const copyBtn = iframe.contentDocument.getElementById('copy-btn');
 
-        // 3. Input SVG Code (10s)
-        showNarration('まずはこちらに、最適化したいSVGコードを貼り付けます。', 4000);
+        // 3. Input SVG Code (was 10s, now 12s)
+        showNarration('まずはこちらに、最適化したいSVGコードを貼り付けます。', 5000);
         await moveCursor(320, 280, 1000); // Adjusted coordinates
         setCursorHighlight(true);
         await sleep(500);
         inputCodeEl.focus();
         inputCodeEl.value = svgCodeToPaste; 
         setCursorHighlight(false);
-        await sleep(5500);
+        await sleep(6500); // Increased pause
 
-        // 4. Preview appears (8s)
-        showNarration('貼り付けるとすぐに、画像プレビューが表示されます。', 4000);
+        // 4. Preview appears (was 8s, now 10s)
+        showNarration('貼り付けるとすぐに、画像プレビューが表示されます。', 5000);
         previewSvgEl.innerHTML = svgCodeToPaste;
         previewSvgEl.style.opacity = '1';
-        await sleep(4000);
+        await sleep(5000); // Increased pause
 
-        // 5. Optimized code appears (10s)
-        showNarration('下側には、最適化されたクリーンなSVGコードが自動で表示されます。', 5000);
+        // 5. Optimized code appears (was 10s, now 12s)
+        showNarration('下側には、最適化されたクリーンなSVGコードが自動で表示されます。', 6000);
         outputCodeEl.value = optimizedSvgCode;
         outputCodeEl.style.opacity = '1';
-        await sleep(5000);
+        await sleep(6000); // Increased pause
 
-        // 6. Copy code (5s)
-        showNarration('このボタンを押せば、最適化済みのコードをすぐコピーできます。', 4500);
-        await moveCursor(50, 650, 1000); // Adjusted coordinates for bottom-left button
+        // 6. Copy code (was 5s, now 7s)
+        showNarration('このボタンを押せば、最適化済みのコードをすぐコピーできます。', 5000);
+        await moveCursor(45, 645, 1000); // Re-adjusted coordinates for button center
         setCursorHighlight(true);
         await sleep(500);
         // Simulate click effect
@@ -271,13 +271,13 @@ document.addEventListener('DOMContentLoaded', () => {
         await sleep(200);
         copyBtn.style.backgroundColor = 'var(--blue)';
         setCursorHighlight(false);
-        await sleep(3000);
+        await sleep(4000); // Increased pause
 
-        // 7. Ending (5s)
+        // 7. Ending (was 5s, now 7s)
         browser.style.opacity = '0';
         cursor.style.opacity = '0';
         endingText.classList.add('active');
-        await sleep(5000);
+        await sleep(7000);
         endingText.style.opacity = '0';
         
         // Animation finished
