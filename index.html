@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Optimizer Tutorial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="screen">
+        <div id="opening-text" class="overlay-text active">SVGコードを最適化する<br>神ツールをご紹介！</div>
+        <div id="ending-text" class="overlay-text">SVGの整理整頓、<br>これ一本で解決！<br><span class="logo">svg.vercel.app</span></div>
+
+        <div id="browser">
+            <div class="browser-bar">
+                <div class="dots">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                </div>
+                <div class="address-bar">
+                    <span id="url"></span>
+                </div>
+            </div>
+            <div class="browser-content">
+                <iframe id="app-iframe" src="about:blank"></iframe>
+            </div>
+        </div>
+
+        <div id="cursor"></div>
+        <div id="narration-box"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
