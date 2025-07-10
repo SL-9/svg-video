@@ -165,9 +165,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 main {
                     grid-template-columns: 1fr; /* Switch to a single column */
                     grid-template-rows: auto auto auto; /* Each item gets its own row */
+                    overflow-y: auto; /* Allow scrolling on small screens */
+                    height: calc(100% - 45px); /* Adjust height for smaller header */
+                }
+                .code-wrapper, #preview-area, .output-wrapper {
+                    padding: 12px;
+                }
+                 header {
+                    height: 45px;
+                    padding: 0 15px;
+                }
+                header h1 {
+                    font-size: 18px;
+                }
+                textarea {
+                    min-height: 200px; /* Ensure textarea is tall enough */
+                    font-size: 13px;
                 }
                 .output-wrapper {
                     grid-column: 1; /* Unset span */
+                }
+                #copy-btn {
+                    padding: 8px 16px; /* Make button easier to tap */
+                    font-size: 15px;
                 }
             }
         </style>
