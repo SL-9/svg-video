@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
         await sleep(4000);
 
         // 5. Optimized code appears (10s)
-        showNarration('右側には、最適化されたクリーンなSVGコードが自動で表示されます。', 5000);
+        showNarration('下側には、最適化されたクリーンなSVGコードが自動で表示されます。', 5000);
         outputCodeEl.value = optimizedSvgCode;
         outputCodeEl.style.opacity = '1';
         await sleep(5000);
