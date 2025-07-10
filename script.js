@@ -114,9 +114,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 border-radius: 4px;
             }
             #copy-btn {
-                position: absolute;
-                top: 10px;
-                right: 15px;
                 background: var(--blue);
                 color: black;
                 border: none;
@@ -126,6 +123,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 font-weight: 500;
                 cursor: pointer;
                 transition: background-color .2s;
+                margin-top: 10px; /* Add some space above */
+                align-self: flex-start; /* Align to the left */
             }
             #copy-btn:hover { background: #81d4fa; }
             .output-wrapper {
@@ -134,6 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 padding: 15px;
                 display: flex;
                 flex-direction: column;
+                position: relative; /* For positioning the copy button */
             }
             #preview-area {
                 background: var(--grey-100);
@@ -233,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 6. Copy code (5s)
         showNarration('このボタンを押せば、最適化済みのコードをすぐコピーできます。', 4500);
-        await moveCursor(1200, 500, 1000); // Adjusted coordinates for new layout
+        await moveCursor(50, 650, 1000); // Adjusted coordinates for bottom-left button
         setCursorHighlight(true);
         await sleep(500);
         // Simulate click effect
@@ -250,9 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
         await sleep(5000);
         endingText.style.opacity = '0';
         
-        // Loop animation
-        await sleep(1000);
-        window.location.reload();
+        // Animation finished
     }
 
     runAnimation();
