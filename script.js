@@ -160,6 +160,16 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             #preview-svg { opacity: 0; transition: opacity 0.5s; }
             #output-code { opacity: 0; transition: opacity 0.5s; }
+
+            @media (max-width: 768px) {
+                main {
+                    grid-template-columns: 1fr; /* Switch to a single column */
+                    grid-template-rows: auto auto auto; /* Each item gets its own row */
+                }
+                .output-wrapper {
+                    grid-column: 1; /* Unset span */
+                }
+            }
         </style>
         <header>
             <h1>SVGOMG</h1>

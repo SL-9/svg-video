@@ -9,14 +9,16 @@ body {
 }
 
 #screen {
-    width: 1280px;
-    height: 720px;
+    width: 100%;
+    max-width: 1280px;
+    aspect-ratio: 16 / 9;
     background-color: #fff;
     position: relative;
     overflow: hidden;
     border: 1px solid #ccc;
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
+
 
 .overlay-text {
     position: absolute;
@@ -29,13 +31,20 @@ body {
     justify-content: center;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.95);
-    font-size: 64px;
+    font-size: 5vw; /* Use viewport width for responsive font size */
     font-weight: bold;
     text-align: center;
     z-index: 100;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
 }
+
+@media (min-width: 1280px) {
+    .overlay-text {
+        font-size: 64px; /* Set a max font size on large screens */
+    }
+}
+
 
 .overlay-text.active {
     opacity: 1;
