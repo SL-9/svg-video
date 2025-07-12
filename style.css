@@ -1,3 +1,7 @@
+html, body {
+    overflow-x: hidden;
+}
+
 body {
     margin: 0;
     font-family: sans-serif;
@@ -9,6 +13,7 @@ body {
 }
 
 #screen {
+    overflow: auto;
     height: 100vh; /* Use full viewport height */
     aspect-ratio: 16 / 9; /* Maintain aspect ratio */
     max-width: 100%; /* Ensure it doesn't overflow horizontally */

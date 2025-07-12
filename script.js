@@ -263,6 +263,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 6. Copy code (was 5s, now 7s)
         showNarration('このボタンを押せば、最適化済みのコードをすぐコピーできます。', 5000);
+
+        // Scroll down to the button if needed on smaller screens
+        const mainEl = iframe.contentDocument.querySelector('main');
+        if (mainEl.scrollHeight > mainEl.clientHeight) {
+            mainEl.scrollTo({
+                top: mainEl.scrollHeight,
+                behavior: 'smooth'
+            });
+            await sleep(1000); // Wait for scroll animation
+        }
+
         await moveCursor(45, 645, 1000); // Re-adjusted coordinates for button center
         setCursorHighlight(true);
         await sleep(500);
